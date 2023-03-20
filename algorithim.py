@@ -80,6 +80,17 @@ def priority(MBTI, families):
     return priority
 
 def selection(MBTI, families, space):
+    """
+    Find which family the member should join after considering the priority and the space left
+
+    Args:
+        MBTI (4 letter string)
+        families (list of [float, float]): A list of families containing a list of its own members' MBTI 2D coordiantes
+        space ([int, int, int, int]): Spots left for ['f1', 'f2, 'f3', 'f4']
+
+    Returns:
+        String: The name of the family the member should join
+    """
     order = priority(MBTI, families)
     for i in order:
         if (i == 'f1'):
