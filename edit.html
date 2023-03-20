@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="width: 100%">
+        {% block title %} Edit {{ member.firstname }}
+                               {{ member.lastname }}'s Details
+        {% endblock %}
+    </h1>
+    <form method="post">
+        <p>
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname"
+                   value={{ member.firstname }}
+                   placeholder="First name">
+            </input>
+        </p>
+
+        <p>
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname"
+                   value={{ member.lastname }}
+                   placeholder="Last name">
+            </input>
+        </p>
+
+        <p>
+            <label for="MBTI">MBTI</label>
+            <input type="text" name="MBTI"
+                   value={{ member.MBTI }}
+                   placeholder="MBTI">
+            </input>
+        </p>
+
+        <p>
+            <label for="family">Family</label>
+            <input type="text" name="family"
+                   value={{ member.family }}
+                   placeholder="Family">
+            </input>
+        </p>
+        
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}
